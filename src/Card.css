@@ -1,0 +1,140 @@
+article {
+    background-color: hsl(200, 60%, 99%);
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 260px;
+    width: 100%; /* La card occupa tutta la larghezza disponibile */
+    max-width: 380px; /* Limite massimo di larghezza */
+    box-shadow: 3px 3px 15px rgba(44, 46, 80, 0.24);
+    box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
+}
+
+/* Tema scuro per le card */
+body.dark-theme article {
+    background-color: hsl(217, 30%, 25%);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+#content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: hsl(227, 75%, 14%);
+}
+
+/* Tema scuro per i titoli delle card */
+body.dark-theme h2 {
+    color: hsl(200, 60%, 99%);
+}
+
+p{
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: hsl(226, 11%, 37%);
+}
+
+/* Tema scuro per i paragrafi delle card */
+body.dark-theme p {
+    color: hsl(226, 11%, 70%);
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#remove{
+    background-color: hsl(200, 60%, 99%);
+    border-radius: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: hsl(227, 75%, 14%);
+    border: 1px solid hsl(0, 0%, 78%);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#remove:hover{
+  background-color: hsl(3, 77%, 44%);
+  color: hsl(200, 60%, 99%);
+}
+#remove:focus{
+  background-color: hsl(0, 0%, 78%);
+  color: hsl(227, 75%, 14%);
+  border: 1px solid hsl(3, 77%, 44%);
+}
+
+/* Tema scuro per il pulsante remove */
+body.dark-theme #remove {
+    background-color: hsl(217, 30%, 25%);
+    color: hsl(200, 60%, 99%);
+    border: 1px solid hsl(217, 30%, 45%);
+}
+
+body.dark-theme #remove:hover {
+    background-color: hsl(3, 77%, 44%);
+    color: hsl(200, 60%, 99%);
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+  width: 45px;
+  height: 23px;
+  border-radius: 20px;
+  background-color: hsl(0, 0%, 78%);
+  position: relative;
+  overflow: hidden;
+}
+.toggle-btn.active {
+  background-color: hsl(3, 77%, 44%);
+}
+.toggle-btn.active:hover{
+  background-color: hsl(3, 71%, 56%);
+}
+
+.knob {
+  position: absolute;
+  top: 1.5px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: hsl(200, 60%, 99%);
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(20, 13, 63, 0.222);
+  transition: left 0.3s ease;
+}
+
+.toggle-btn.active .knob {
+  left: 22px;
+}
+
+.knob-animate {
+  animation: knobMove 0.3s ease;
+}
+
+@keyframes knobMove {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

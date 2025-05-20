@@ -1,0 +1,169 @@
+/* RESET E BASE */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: hsl(217, 61%, 90%);
+    min-height: 100vh; /* Forza l'altezza minima a coprire tutto lo schermo */
+}
+
+/* Tema scuro */
+body.dark-theme {
+    background-color: #040918;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh; /* Assicura che il root copra tutta l'altezza */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+header {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto 25px auto;
+    padding: 10px 15px;
+    box-sizing: border-box;
+
+    background-color: hsl(200, 60%, 99%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+    border-radius: 8px;
+    box-shadow: 3px 3px 15px rgba(44, 46, 80, 0.24);
+}
+
+/* Tema scuro per header */
+body.dark-theme header {
+    background-color: hsl(226, 25%, 17%);
+}
+body.dark-theme header button{
+    background-color: hsl(225, 23%, 24%);
+}
+body.dark-theme header #start-logo{
+    color: hsl(200, 60%, 99%);
+    
+}
+
+header button {
+    border: 0;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background-color: hsl(0, 0%, 78%);
+}
+
+#sun-moon {
+    padding: 5px;
+}
+
+/* NAV */
+nav {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto 25px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HEADINGS */
+h1 {
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+    color: hsl(227, 75%, 14%);
+}
+
+/* Tema scuro per i titoli */
+body.dark-theme h1 {
+    color: hsl(200, 60%, 99%);
+}
+
+/* BUTTONS */
+nav button { 
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 500;  
+    margin: 0 5px;
+}
+
+.redButt {
+    background-color: hsl(3, 77%, 44%);
+    color: hsl(200, 60%, 99%);
+    border: 0;
+}
+.redButt:hover {
+    background-color: hsl(3, 71%, 56%);
+}
+
+.whiteButt {
+    background-color: hsl(200, 60%, 99%);
+    color: hsl(227, 75%, 14%);
+    border: 1px solid hsl(0, 0%, 78%);
+}
+.whiteButt:hover {
+    background-color: hsla(200, 60%, 99%, 0.353);
+    color: hsla(226, 75%, 14%, 0.507);
+}
+
+/* Tema scuro per i pulsanti bianchi */
+body.dark-theme .whiteButt {
+    background-color: hsl(217, 30%, 35%);
+    color: hsl(200, 60%, 99%);
+    border: 1px solid hsl(217, 30%, 45%);
+}
+
+body.dark-theme .whiteButt:hover {
+    background-color: hsl(217, 30%, 40%);
+}
+
+header button:focus,
+nav button:focus {
+    outline: 2px solid hsl(3, 86%, 64%);
+    outline-offset: 2px;
+}
+
+/* Cards layout */
+.cards-layout {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Aggiunto gap per separare le card anche in modalità colonna */
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 600px) {
+    .cards-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 380px));
+        gap: 20px;
+        justify-content: center;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
